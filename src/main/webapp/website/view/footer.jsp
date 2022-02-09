@@ -7,16 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="fixed-bottom bg-secondary">	
-			<div class="container">
-				
-					<div class="row">	
-						<div class=" offset-3 text-center"> <!-- 로고[웹사이트명] -->
-							 <h6>HRDKOREA CopyrightC2019 ALL rights reserved. Human Resources Development Service of Korea</h6> 
+
+
+					
+					<div style="height: 100px;text-align: center;padding-top: 3px; background-color: gray;"> 
+							 <h6 style="margin-left: 100px; margin-top: 50px;">HRDKOREA CopyrightC2019 ALL rights reserved. Human Resources Development Service of Korea</h6> 
 						</div>
-					</div>
-			</div>
-		</div>
-				
+					
+			
 </body>
 </html>

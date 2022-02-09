@@ -8,16 +8,15 @@
 </head>
 <body>
 	<%@include file = "nav.jsp" %>
+	
 		
 	<br><br><br><br>
-			<div class="container"> <!-- 박스권 -->
-				
-					<div class="row">	<!-- 가로배치 -->
-						<div class="col-md-4 offset-4 text-center"> <!-- 로고[웹사이트명] -->
+			
+						<div style="text-align: center;"> 
 						<h2>과정 평가형 자격 CBQ</h2>
 						</div>
 						<br><br><br><br>
-						<div >	
+						<div style="margin-left: 300px;" >	
 								<div>
 								국가 직무 능력 표준 으로 설계된 교육 룬련과정을 체계적으로 이수하고 내외부 평가를 거쳐 취득하는 기술 자격증입니다
 								</div>
@@ -37,10 +36,11 @@
 								
 							
 						</div>
-					</div>
 				
-				
-			</div>
+			<br>
+			<br>
+			<br>
+			<br><br><br><br>
 		<%@include file = "footer.jsp" %>
 		
 

@@ -11,86 +11,62 @@
 <%@include file = "nav.jsp" %>
 		
 	<br><br><br><br>
-
-<%@include file = "footer.jsp" %>
-	
-<div class="container">	
-	<div class="col-md-6"> 	
-				
+		<div style="margin-left: 600px;text-align: center;">
+					<h1 style="margin-right: 700px;">작업공정등록</h1>
 					<form action="../controller/registercontroller.jsp" method="post" >
-						<div class="row">	<!-- 3:8 -->
-							<div class="col-md-3 m-2"> <label>작업지시번호</label> </div>
-							<div class="col-md-8">
-								<input type="text" id ="number"  name="number" class="form-control" placeholder="예)2019001">
-							</div>
-							<div>
-								<span id="phoneresult"></span>
-							</div>
-						</div>
-						<div class="row">	<!-- 3:8 -->
-							<div class="col-md-3 m-2"> <label>재료준비</label> </div>
-							<div class="col-md-8 text-center"> 
-								<input type="radio" name="state" value="complete"   > 완료
-								<input type="radio" name="state" value="-"   > 작업중
-							</div>
-						</div>
-						<div class="row">	<!-- 3:8 -->
-							<div class="col-md-3 m-2"> <label>인쇄공정</label> </div>
-							<div class="col-md-8 text-center"> 
-								<input type="radio" name="state1" value="complete"  > 완료
-								<input type="radio" name="state1" value="-"  > 작업중
-							</div>
-						</div>
-						<div class="row">	<!-- 3:8 -->
-							<div class="col-md-3 m-2"> <label>합지공정</label> </div>
-							<div class="col-md-8 text-center"> 
-								<input type="radio" name="state2" value="complete"   > 완료
-								<input type="radio" name="state2" value="-"   > 작업중
-							</div>
-						</div>
-						<div class="row">	<!-- 3:8 -->
-							<div class="col-md-3 m-2"> <label>접합공정</label> </div>
-							<div class="col-md-8 text-center"> 
-								<input type="radio" name="state3" value="complete"   > 완료
-								<input type="radio" name="state3" value="-" > 작업중
-							</div>
-						</div>
-						<div class="row">	<!-- 3:8 -->
-							<div class="col-md-3 m-2"> <label>포장공정</label> </div>
-							<div class="col-md-8 text-center"> 
-								<input type="radio" name="state4" value="complete"   > 완료
-								<input type="radio" name="state4" value="-"  > 작업중
-							</div>
-						</div>
-						<div class="row">	<!-- 3:8 -->
-							<div class="col-md-3 m-2"> <label>인쇄공정</label> </div>
-							<div class="col-md-8 text-center"> 
-								<input type="radio" name="state5" value="complete"   > 완료
-								<input type="radio" name="state5" value="-"  > 작업중
-							</div>
-						</div>
-						<div class="row">	<!-- 3:8 -->
-							<div class="col-md-3 m-2"> <label>최종작업일자</label> </div>
-							<div class="col-md-8">
-								<input type="text"  name="date" class="form-control" placeholder="예)2019-01-01">
-							</div>
+						<table>
+						<tr > 
+							<th width="15%">작업지시번호 </th><td><input type="text" id ="number"  name="number" class="form-control" ></td><td>예)20190001</td>
+						</tr>
+						<tr >
+						<th  width="15%"> 재료준비</th> <td>
+							<input type="radio" name="state" value="complete"   > 완료</td><td>
+							<input type="radio" name="state" value="-"   > 작업중</td>
+						</tr>
 							
-						</div>
-							<div class="row">	<!-- 3:8 -->
-							<div class="col-md-3 m-2"> <label>최종작업시간</label> </div>
-							<div class="col-md-8">
-								<input type="text"   name="time" class="form-control" placeholder="예)13:00">
-							</div>
-							
-						</div>
+						 <tr  width="15%"> <th >인쇄공정</th>
+							<td><input type="radio" name="state1" value="complete"  > 완료</td>
+							<td><input type="radio" name="state1" value="-"  > 작업중</td>
+						</tr>
 						
+						<tr  width="15%"> <th >합지공정</th>
+							<td><input type="radio" name="state2" value="complete"   > 완료</td>
+							<td><input type="radio" name="state2" value="-"   > 작업중</td>
+						</tr>
 						
-						<div>
-							<button type="submit" class="form-control p-3 m-3">공정등록</button>
-						</div>
+						<tr  width="15%"> <th >접합공정</th>
+							<td><input type="radio" name="state3" value="complete"   > 완료</td>
+							<td><input type="radio" name="state3" value="-" > 작업중</td>
+						</tr>
+						
+						<tr  width="15%"> <th >포장공정</th>
+							<td><input type="radio" name="state4" value="complete"   > 완료</td>
+							<td><input type="radio" name="state4" value="-"  > 작업중</td>
+						</tr>
+					
+						<tr width="15%"> <th >인쇄공정</th>
+							<td><input type="radio" name="state5" value="complete" > 완료</td>
+							<td><input type="radio" name="state5" value="-"  > 작업중</td>
+						</tr>
+						
+							<tr width="15%"><th>최종작업일자</th>
+							<td><input type="text"  name="date" class="form-control" ></td><td>예)2019-01-01</td>
+						</tr>
+						
+						<tr width="15%"><th>최종작업시간</th>
+							<td><input type="text"   name="time" class="form-control"></td><td>예)13:00</td>
+						</tr>
+						
+						<tr>
+							<td><input type="submit" value="공정등록"></td><td><input type="button" value="공정수정"><td></td><td><a href="/jsptest/test/view/process/processregister.jsp"><input type="button" value="다시쓰기"></a></td>
+						</tr>
+						</table>
 					</form>
-				</div>
-			</div>
+				</div>			
+			
+			
+			<br><br><br><br>
+		<%@include file = "footer.jsp" %>
 
 </body>
 </html>

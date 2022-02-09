@@ -12,20 +12,19 @@
 <body>
 <%@include file = "nav.jsp" %>
 <% ArrayList<Produt>product= ProductDao.getproductdao().productview(); 
-System.out.print( product+"123");
 %>
 	<br><br><br><br>
 <div class=container>
 	
-		<div class=" offset-3 text-center"> 
+		<div style="text-align: center;">
 		<h2>작업 공정 조회</h2>
 			</div>
 					
 			<br><br><br><br>
-	<table class="table">
+	<table style="margin: 0 auto;" >
 	<tr>
-			<td> 작업지시번호 </td> <td> 재료준비 </td> <td>인쇄공정</td>
-			<td>합지공정</td><td>접합공정</td><td>포장공정</td><td>인쇄공정</td><td>최종작업일자</td><td>최종작업시간</td>
+			<td width="10%"> 작업지시번호 </td> <td width="10%"> 재료준비 </td> <td width="10%">인쇄공정</td>
+			<td width="10%">합지공정</td><td width="10%">접합공정</td><td width="10%">포장공정</td><td width="10%">인쇄공정</td><td width="10%">최종작업일자</td><td width="10%">최종작업시간</td>
 		</tr>
 		<%	
 		
