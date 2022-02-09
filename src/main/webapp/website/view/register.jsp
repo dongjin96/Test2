@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="../js/product.js"></script>
 
 <%@include file = "nav.jsp" %>
 		
@@ -90,7 +92,7 @@
 						
 						
 						<div>
-							<button type="submit" class="form-control p-3 m-3">공정등록</button>
+							<button onclick="check();" class="form-control p-3 m-3">공정등록</button>
 						</div>
 					</form>
 				</div>

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import Dto.Produt;
 
@@ -62,5 +63,33 @@ public class ProductDao {
 	return false;
     }
     
+  
+
+    public ArrayList<Produt> productview(){
+     ArrayList<Produt>product= new ArrayList<Produt>();
+        String sql = "select * from board order by b_no DESC";
+        try {
+       ps = con.prepareStatement(sql);
+       rs = ps.executeQuery();
+       while(rs.next()) {
+           Produt produt2 = new Produt(
+        	   rs.getInt(1),
+        	   rs.getString(2),
+        	   rs.getString(3),
+        	   rs.getString(4),
+        	   rs.getString(5),
+              rs.getString(6),
+              rs.getString(7),
+              rs.getString(8),
+              rs.getString(9));
+           product.add(produt2);
+             
+       }
+       return product;
+        } catch (Exception e) { 
+       System.out.println(e);
+        }
+        return null;  
+    }
     
 }
