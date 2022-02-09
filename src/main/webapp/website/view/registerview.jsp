@@ -11,31 +11,45 @@
 </head>
 <body>
 <%@include file = "nav.jsp" %>
-<% ArrayList<Produt>product= new ArrayList<Produt>(); %>
+<% ArrayList<Produt>product= ProductDao.getproductdao().productview(); 
+System.out.print( product+"123");
+%>
 	<br><br><br><br>
-<a>등록한거 보는곳입니다</a>
-	<table>
+<div class=container>
+	
+	<div class="row">	<!-- 가로배치 -->
+						<div class=" offset-3 text-center"> <!-- 로고[웹사이트명] -->
+							<h2>작업 공정 조회</h2>
+						</div>
+					</div>
+			<br><br><br><br>
+	<table class="table">
 	<tr>
-			<th> 작업지시번호 </th> <th> 재료준비 </th> <th>인쇄공정</th>
-			<th>합지공정</th><th>접합공정</th><th>포장공정</th><th>인쇄공정</th><th>최종작업일자</th><th>최종작업시간</th>
+			<td> 작업지시번호 </td> <td> 재료준비 </td> <td>인쇄공정</td>
+			<td>합지공정</td><td>접합공정</td><td>포장공정</td><td>인쇄공정</td><td>최종작업일자</td><td>최종작업시간</td>
 		</tr>
-		<%
-			for( Produt produt : product){ %>
+		<%	
+		
+		for( int i = 0 ; i<product.size() ;i++ ){
+			 for( Produt temp : product){ 
+			     
+			%>
 				<tr>
-					<td><%=produt.getNumber()+1 %></td>
-					<td><%=produt.getState() %></td>
-					<td><%=produt.getState1() %></td>
-					<td><%=produt.getState2() %></td>
-					<td><%=produt.getState3() %></td>
-					<td><%=produt.getState4() %></td>
-					<td><%=produt.getState5() %></td>
-					<td><%=produt.getDate() %></td>
-					<td><%=produt.getTime() %></td>
+					<td><%=temp.getNumber()+"-"+i+1 %></td>
+					<td><%=temp.getState() %></td>
+					<td><%=temp.getState1() %></td>
+					<td><%=temp.getState2() %></td>
+					<td><%=temp.getState3() %></td>
+					<td><%=temp.getState4() %></td>
+					<td><%=temp.getState5() %></td>
+					<td><%=temp.getDate() %></td>
+					<td><%=temp.getTime() %></td>
 				</tr>
 		
-		<%	} %>
+			<%}%>
+			<%}%>
 	</table>
-
+</div>
 <%@include file = "footer.jsp" %>
 </body>
 </html>

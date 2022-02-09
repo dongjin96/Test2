@@ -18,11 +18,13 @@
 	String time = request.getParameter("time");
 	Produt produt = new Produt(number,state,state1,state2,state3,state4,state5,date,time);
 	
-	/* boolean result = ProductDao.getproductdao().add(produt);
+	 boolean result = ProductDao.getproductdao().add(produt);
 	if(result){
+	    out.print("<script>alert('공정이 등록 되었습니다');</script>");
 	    response.sendRedirect("../view/main.jsp");
 	}else{
+	    out.print("<script>alert('공정이 등록 되었습니다');</script>");
 	    response.sendRedirect("../view/main.jsp");
-	} */
+	} 
 
 %>

@@ -13,9 +13,7 @@
 <br><br>
 
 				<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_manu">
-						<span class="navbar-toggler-icon"></span>
-					</button>
+			
 					<div class="collapse navbar-collapse" id="main_manu">
 						<ul class="navbar-nav col-md-12 justify-content-between" >
 						

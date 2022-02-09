@@ -10,6 +10,9 @@ public class Produt {
     private String state5;
     private String date;
     private String time;
+    
+    
+    
     public Produt() {
 	// TODO Auto-generated constructor stub
     }

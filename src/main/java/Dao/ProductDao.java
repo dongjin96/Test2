@@ -26,6 +26,7 @@ public class ProductDao {
     public static ProductDao productDao = new ProductDao();
    public static ProductDao getproductdao() {return productDao;}
     
+   
     public boolean add(Produt produt) {
 	String sql = "insert into product(number,state,state1,state2,state3,state4,state5,date,time) values(?,?,?,?,?,?,?,?,?)";
 	try {
@@ -47,27 +48,13 @@ public class ProductDao {
 	return false;
 	
     }
-    public boolean add1(Produt produt) {
-	String sql = "insert into product(number,state,date,time) values(?,?,?,?)";
-	try {
-	    ps = con.prepareStatement(sql);
-		ps.setInt(1, produt.getNumber() );
-		ps.setString(2, produt.getState() );
-		ps.setString(3, produt.getDate() );
-		ps.setString(4, produt.getTime() );
-		ps.executeUpdate();
-		return true;
-	    
-	} catch (Exception e) {System.out.println(e);}
-
-	return false;
-    }
+  
     
   
 
     public ArrayList<Produt> productview(){
      ArrayList<Produt>product= new ArrayList<Produt>();
-        String sql = "select * from board order by b_no DESC";
+        String sql = "select * From product;";
         try {
        ps = con.prepareStatement(sql);
        rs = ps.executeQuery();
