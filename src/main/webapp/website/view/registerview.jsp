@@ -17,11 +17,10 @@ System.out.print( product+"123");
 	<br><br><br><br>
 <div class=container>
 	
-	<div class="row">	<!-- 가로배치 -->
-						<div class=" offset-3 text-center"> <!-- 로고[웹사이트명] -->
-							<h2>작업 공정 조회</h2>
-						</div>
-					</div>
+		<div class=" offset-3 text-center"> 
+		<h2>작업 공정 조회</h2>
+			</div>
+					
 			<br><br><br><br>
 	<table class="table">
 	<tr>
