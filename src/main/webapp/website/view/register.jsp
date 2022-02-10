@@ -1,3 +1,4 @@
+<%@page import="Dao.ProductDao"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -16,49 +17,50 @@
 					<form action="../controller/registercontroller.jsp" method="post" >
 						<table>
 						<tr > 
-							<th width="15%">작업지시번호 </th><td><input type="text" id ="number"  name="number" class="form-control" ></td><td>예)20190001</td>
+							<th width="15%">작업지시번호 </th><td><input type="text" id ="number"  name="number" class="form-control" value=<%=ProductDao.productDao.getnumber()+1 %> ></td><td>예)20190001</td>
 						</tr>
 						<tr >
 						<th  width="15%"> 재료준비</th> <td>
-							<input type="radio" name="state" value="complete"   > 완료</td><td>
-							<input type="radio" name="state" value="-"   > 작업중</td>
+							<input type="radio" name="state" value="완료"   > 완료</td><td>
+							<input type="radio" name="state" value="작업중"   > 작업중</td>
 						</tr>
 							
 						 <tr  width="15%"> <th >인쇄공정</th>
-							<td><input type="radio" name="state1" value="complete"  > 완료</td>
-							<td><input type="radio" name="state1" value="-"  > 작업중</td>
+							<td><input type="radio" name="state1" value="완료"  > 완료</td>
+							<td><input type="radio" name="state1" value="작업중"  > 작업중</td>
 						</tr>
 						
 						<tr  width="15%"> <th >합지공정</th>
-							<td><input type="radio" name="state2" value="complete"   > 완료</td>
-							<td><input type="radio" name="state2" value="-"   > 작업중</td>
+							<td><input type="radio" name="state2" value="완료"   > 완료</td>
+							<td><input type="radio" name="state2" value="작업중"   > 작업중</td>
 						</tr>
 						
 						<tr  width="15%"> <th >접합공정</th>
-							<td><input type="radio" name="state3" value="complete"   > 완료</td>
-							<td><input type="radio" name="state3" value="-" > 작업중</td>
+							<td><input type="radio" name="state3" value="완료"   > 완료</td>
+							<td><input type="radio" name="state3" value="작업중" > 작업중</td>
 						</tr>
 						
 						<tr  width="15%"> <th >포장공정</th>
-							<td><input type="radio" name="state4" value="complete"   > 완료</td>
-							<td><input type="radio" name="state4" value="-"  > 작업중</td>
+							<td><input type="radio" name="state4" value="완료"   > 완료</td>
+							<td><input type="radio" name="state4" value="작업중"  > 작업중</td>
 						</tr>
 					
 						<tr width="15%"> <th >인쇄공정</th>
-							<td><input type="radio" name="state5" value="complete" > 완료</td>
-							<td><input type="radio" name="state5" value="-"  > 작업중</td>
+							<td><input type="radio" name="state5" value="완료" > 완료</td>
+							<td><input type="radio" name="state5" value="작업중"  > 작업중</td>
 						</tr>
 						
 							<tr width="15%"><th>최종작업일자</th>
-							<td><input type="text"  name="date" class="form-control" ></td><td>예)2019-01-01</td>
+							<td><input type="text"  name="date" class="form-control" ></td><td>예)20190101</td>
 						</tr>
 						
 						<tr width="15%"><th>최종작업시간</th>
-							<td><input type="text"   name="time" class="form-control"></td><td>예)13:00</td>
+							<td><input type="text"   name="time" class="form-control"></td><td>예)1300</td>
 						</tr>
 						
 						<tr>
-							<td><input type="submit" value="공정등록"></td><td><input type="button" value="공정수정"><td></td><td><a href="/jsptest/test/view/process/processregister.jsp"><input type="button" value="다시쓰기"></a></td>
+							<td><input type="submit" value="공정등록"></td><td><input type="button" value="공정수정"><td></td>
+							<td><input type="reset" value="다시쓰기"></td>
 						</tr>
 						</table>
 					</form>

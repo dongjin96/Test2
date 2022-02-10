@@ -1,3 +1,4 @@
+<%@page import="javax.xml.transform.Templates"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Dao.ProductDao"%>
 <%@page import="Dto.Produt"%>
@@ -12,6 +13,9 @@
 <body>
 <%@include file = "nav.jsp" %>
 <% ArrayList<Produt>product= ProductDao.getproductdao().productview(); 
+	
+	
+	
 %>
 	<br><br><br><br>
 <div class=container>
@@ -28,24 +32,65 @@
 		</tr>
 		<%	
 		
-		for( int i = 0 ; i<product.size() ;i++ ){
+	
 			 for( Produt temp : product){ 
-			     
+			    
 			%>
 				<tr>
-					<td><%=temp.getNumber()+"-"+i+1 %></td>
-					<td><%=temp.getState() %></td>
-					<td><%=temp.getState1() %></td>
-					<td><%=temp.getState2() %></td>
-					<td><%=temp.getState3() %></td>
-					<td><%=temp.getState4() %></td>
-					<td><%=temp.getState5() %></td>
-					<td><%=temp.getDate() %></td>
-					<td><%=temp.getTime() %></td>
+					<td><%=temp.getNumber()%></td>
+				
+					<%if(temp.getState().equals("작업중")){ %>             <td> - </td>
+					<%}else{ %>                 <td> <%=temp.getState() %> </td>            <%} %>
+				
+				<%if(temp.getState1().equals("작업중")){ %>             <td> - </td>
+					<%}else{ %>                 <td> <%=temp.getState1() %> </td>            <%} %>
+				
+				<%if(temp.getState2().equals("작업중")){ %>             <td> - </td>
+					<%}else{ %>                 <td> <%=temp.getState2() %> </td>            <%} %>
+				
+				<%if(temp.getState3().equals("작업중")){ %>             <td> - </td>
+					<%}else{ %>                 <td> <%=temp.getState3() %> </td>            <%} %>
+				
+				<%if(temp.getState4().equals("작업중")){ %>             <td> - </td>
+					<%}else{ %>                 <td> <%=temp.getState4() %> </td>            <%} %>
+					
+					
+				<%if(temp.getState5().equals("작업중")){ %>             <td> - </td>
+					<%}else{ %>                 <td> <%=temp.getState5() %> </td>            <%} %>
+					
+					<%
+					try{
+					 	StringBuffer ssb = new StringBuffer(temp.getDate());
+						ssb.insert(4, "-");
+						ssb.insert(7,"-");
+						temp.setDate(ssb.toString());
+						
+						
+					}catch (Exception e) {
+					 
+					}
+					%>
+				
+					<td><%=temp.getDate()%></td>
+					
+					<%
+					try{
+					 	StringBuffer sb = new StringBuffer();
+						sb.append(temp.getTime());
+						sb.insert(2, ":");
+						temp.setTime(sb.toString());
+					}catch (Exception e) {
+					 
+					}
+					%>
+					
+					<td><%=temp.getTime()%></td>
+					
+					
+					 
 				</tr>
-		
-			<%}%>
-			<%}%>
+		<%}%>
+			
 	</table>
 </div>
 <%@include file = "footer.jsp" %>

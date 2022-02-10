@@ -48,6 +48,24 @@ public class ProductDao {
 	return false;
 	
     }
+    
+    public int getnumber() {
+	String sql = "select max(number) From product;";
+	try {
+	    ps = con.prepareStatement(sql);
+	    rs = ps.executeQuery();
+	   if(rs.next()) {
+	       return rs.getInt(1);
+	    }
+	    /* ps.executeUpdate(); */
+	
+	    
+	} catch (Exception e) {
+	    // TODO: handle exception
+	}
+	return 0;
+	
+    }
   
     
   

@@ -38,15 +38,7 @@ public class Produt {
 
 
 
-    public Produt(int number, String state, String date, String time) {
-	super();
-	this.number = number;
-	this.state = state;
-	this.date = date;
-	this.time = time;
-    }
-
-
+ 
 
 
     public int getNumber() {
